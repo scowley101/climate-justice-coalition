@@ -1,1 +1,13 @@
 /* put your shameful styles here */
+
+.hero {
+  &--content {
+    p {
+      @apply text-pageText text-24 font-bold;
+    }
+  }
+}
+
+.is-h4 {
+  @apply text-pageText;
+}

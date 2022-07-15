@@ -46,10 +46,16 @@ module.exports = {
       inherit: 'inherit',
       transparent: 'transparent',
       current: 'currentColor',
-      black: '#000000',
-      white: '#FFFFFF',
+      black: 'var(--black)',
+      white: 'var(--white)',
       pageBG: 'var(--pageBG)',
       pageText: 'var(--pageText)',
+      pageParagraph: 'var(--pageParagraph)',
+      green: 'var(--green)',
+    },
+    fontFamily: {
+      'header': ['var(--headerFont)'],
+      'body': ['var(--bodyFont)'],
     },
     fontSize: new Array(201)
       .fill()
