@@ -48,6 +48,7 @@ export default {
         { type: 'hero' },
         { type: 'marquee' },
         { type: 'dividerPhoto' },
+        {type: 'contactForm'},
         {
           title: 'Reusable Section',
           type: 'reference',

@@ -1,14 +1,14 @@
-import { sortTypes } from '../studio/schemas/objects/shop-sort'
+import { sortTypes } from '../studio/schemas/objects/shop-sort';
 
 // Create our sorting fallback titles from Sanity
 const sortFallbacks = sortTypes
   .map((type) => `type == "${type.value}" => "${type.title}"`)
-  .join(',')
+  .join(',');
 
 // Construct our "home" and "error" page GROQ
-export const homeID = `*[_type=="generalSettings"][0].home->_id`
-export const shopID = `*[_type=="generalSettings"][0].shop->_id`
-export const errorID = `*[_type=="generalSettings"][0].error->_id`
+export const homeID = `*[_type=="generalSettings"][0].home->_id`;
+export const shopID = `*[_type=="generalSettings"][0].shop->_id`;
+export const errorID = `*[_type=="generalSettings"][0].error->_id`;
 
 // Construct our "page" GROQ
 const page = `
@@ -16,7 +16,7 @@ const page = `
   "slug": slug.current,
   "isHome": _id == ${homeID},
   "isShop": _id == ${shopID}
-`
+`;
 
 // Construct our "link" GROQ
 const link = `
@@ -27,7 +27,7 @@ const link = `
   "page": page->{
     ${page}
   }
-`
+`;
 
 // Construct our "image meta" GROQ
 export const imageMeta = `
@@ -40,7 +40,7 @@ export const imageMeta = `
   "type": asset->mimeType,
   "aspectRatio": asset->metadata.dimensions.aspectRatio,
   "lqip": asset->metadata.lqip
-`
+`;
 
 // Construct our "portable text content" GROQ
 export const ptContent = `
@@ -59,7 +59,7 @@ export const ptContent = `
   _type == "photo" => {
     ${imageMeta}
   }
-`
+`;
 
 // Construct our "product" GROQ
 export const product = `
@@ -123,7 +123,7 @@ export const product = `
       forOption
     }
   }
-`
+`;
 
 // Construct our "blocks" GROQ
 export const blocks = `
@@ -152,7 +152,7 @@ export const blocks = `
     _key,
     product->${product}
   }
-`
+`;
 
 // Construct our content "modules" GROQ
 export const modules = `
@@ -193,6 +193,17 @@ export const modules = `
       id,
       title
     }
+  },
+  _type == 'contactForm' => {
+    _type,
+    _key,
+   submit,
+   successMsg[]{
+    ${ptContent}
+  },
+  errorMsg[]{
+    ${ptContent}
+  },
   },
   _type == 'marquee' => {
     _type,
@@ -262,7 +273,7 @@ export const modules = `
       ${ptContent}
     },
   }
-`
+`;
 
 // Construct our "site" GROQ
 export const site = `
@@ -382,9 +393,9 @@ export const site = `
     },
     "gtmID": *[_type == "generalSettings"][0].gtmID,
   }
-`
+`;
 
 // All Products
 export const allProducts = `
   *[_type == "product" && wasDeleted != true && isDraft != true]${product} | order(title asc)
-`
+`;

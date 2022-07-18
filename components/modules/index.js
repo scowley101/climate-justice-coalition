@@ -1,12 +1,13 @@
-import React from 'react'
-import dynamic from 'next/dynamic'
+import React from 'react';
+import dynamic from 'next/dynamic';
 
-const Grid = dynamic(() => import('./grid'))
-const Hero = dynamic(() => import('./hero'))
-const Marquee = dynamic(() => import('./marquee'))
-const DividerPhoto = dynamic(() => import('./divider-photo'))
-const ProductHero = dynamic(() => import('./product-hero'))
-const Collection = dynamic(() => import('./collection-grid'))
+const Grid = dynamic(() => import('./grid'));
+const Hero = dynamic(() => import('./hero'));
+const Marquee = dynamic(() => import('./marquee'));
+const DividerPhoto = dynamic(() => import('./divider-photo'));
+const ProductHero = dynamic(() => import('./product-hero'));
+const Collection = dynamic(() => import('./collection-grid'));
+const ContactForm = dynamic(() => import('./contact-form'));
 
 export const Module = ({
   index,
@@ -16,17 +17,17 @@ export const Module = ({
   onVariantChange,
   collectionProducts,
 }) => {
-  const type = module._type
+  const type = module._type;
 
   switch (type) {
     case 'grid':
-      return <Grid index={index} data={module} />
+      return <Grid index={index} data={module} />;
     case 'hero':
-      return <Hero index={index} data={module} />
+      return <Hero index={index} data={module} />;
     case 'marquee':
-      return <Marquee index={index} data={module} />
+      return <Marquee index={index} data={module} />;
     case 'dividerPhoto':
-      return <DividerPhoto index={index} data={module} />
+      return <DividerPhoto index={index} data={module} />;
     case 'productHero':
       return (
         <ProductHero
@@ -35,15 +36,17 @@ export const Module = ({
           activeVariant={activeVariant}
           onVariantChange={onVariantChange}
         />
-      )
+      );
     case 'collectionGrid':
       return (
         <Collection
           index={index}
           data={{ ...module, products: collectionProducts }}
         />
-      )
+      );
+    case 'contactForm':
+      return <ContactForm index={index} data={module} />;
     default:
-      return null
+      return null;
   }
-}
+};
