@@ -31,5 +31,6 @@
 @import 'modules/_collection';
 @import 'modules/_filters';
 @import 'modules/_product';
+@import 'modules/_contact-form';
 
 @import '_shame';

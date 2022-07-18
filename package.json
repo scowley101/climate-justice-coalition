@@ -25,6 +25,7 @@
     "cross-env": "^7.0.3",
     "embla-carousel-react": "^6.0.2",
     "focus-trap-react": "9.0.2",
+    "formik": "^2.2.9",
     "framer-motion": "6.3.15",
     "js-cookie": "^3.0.0",
     "jsondiffpatch": "^0.4.1",
