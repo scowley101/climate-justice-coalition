@@ -57,9 +57,12 @@ import complexPortableText from './objects/portable-complex'
 import freeform from './objects/freeform'
 import accordions from './objects/accordions'
 import accordion from './objects/accordion'
+import events from './objects/events'
+import event from './objects/event'
 import productCard from './objects/product-card'
 
 import participant from './objects/participant'
+
 
 /*  ------------------------------------------ */
 /*  Your Schema documents / modules / objects
@@ -128,6 +131,8 @@ export default createSchema({
     freeform,
     accordions,
     accordion,
+    events,
+    event,
     productCard,
 
     participant

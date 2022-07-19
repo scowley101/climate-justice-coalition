@@ -132,7 +132,7 @@ ul {
       @apply mb-1;
 
       &::before {
-        content: '+';
+        /* content: '+'; */
         @apply inline-block relative -ml-4 w-4;
       }
     }

@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import { m } from 'framer-motion'
-import cx from 'classnames'
+import React, { useState } from 'react';
+import { m } from 'framer-motion';
+import cx from 'classnames';
 
-import Icon from '@components/icon'
+import Icon from '@components/icon';
 
 const accordionAnim = {
   open: {
@@ -13,7 +13,7 @@ const accordionAnim = {
     opacity: 0,
     height: 0,
   },
-}
+};
 
 const Accordion = ({
   id,
@@ -24,7 +24,7 @@ const Accordion = ({
   className,
   children,
 }) => {
-  const [hasFocus, setHasFocus] = useState(isOpen)
+  const [hasFocus, setHasFocus] = useState(isOpen);
 
   return (
     <div key={id} className={cx('accordion', className)}>
@@ -56,7 +56,7 @@ const Accordion = ({
         </div>
       </m.div>
     </div>
-  )
-}
+  );
+};
 
-export default Accordion
+export default Accordion;

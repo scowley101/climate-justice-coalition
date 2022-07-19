@@ -147,6 +147,21 @@ export const blocks = `
       }
     }
   },
+  _type == 'events' => {
+    _type,
+    _key,
+    items[]{
+      "id": _key,
+      title,
+      eventDate,
+      description,
+      time,
+      location,
+      content[]{
+        ${ptContent}
+      }
+    }
+  },
   _type == 'productCard' => {
     _type,
     _key,
