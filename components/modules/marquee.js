@@ -1,19 +1,19 @@
-import React from 'react'
-import { useInView } from 'react-cool-inview'
-import { Marqy } from 'marqy'
+import React from 'react';
+import { useInView } from 'react-cool-inview';
+import { Marqy } from 'marqy';
 
-import Photo from '@components/photo'
-import ProductCard from '@components/product-card'
+import Photo from '@components/photo';
+import ProductCard from '@components/product-card';
 
 const Marquee = ({ data = {} }) => {
-  const { items, speed, reverse, pausable } = data
+  const { items, speed, reverse, pausable } = data;
 
-  if (!items?.length) return null
+  if (!items?.length) return null;
 
   const { observe, inView } = useInView({
     unobserveOnEnter: true,
     threshold: 0.1,
-  })
+  });
 
   return (
     <div ref={observe} className="marquee-section">
@@ -31,7 +31,7 @@ const Marquee = ({ data = {} }) => {
                   <span key={key} className="marquee--text">
                     {item.text}
                   </span>
-                )
+                );
               case 'photo':
                 return (
                   <div
@@ -45,7 +45,7 @@ const Marquee = ({ data = {} }) => {
                       forceLoad={inView}
                     />
                   </div>
-                )
+                );
               case 'product':
                 return (
                   <div key={key} className="marquee--product">
@@ -58,13 +58,13 @@ const Marquee = ({ data = {} }) => {
                       showQuickAdd
                     />
                   </div>
-                )
+                );
             }
           })}
         </div>
       </Marqy>
     </div>
-  )
-}
+  );
+};
 
-export default Marquee
+export default Marquee;

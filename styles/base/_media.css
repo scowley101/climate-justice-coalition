@@ -1,6 +1,5 @@
 .ar {
   @apply relative overflow-hidden;
-
   &.has-fill {
     @apply absolute inset-0;
   }
