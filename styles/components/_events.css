@@ -36,12 +36,17 @@
 .event {
   @apply grid grid-cols-4 w-full;
 
+  &--date {
+    @apply sm:col-span-1 col-span-4 sm:row-start-1;
+  }
   &--intro {
-    @apply col-span-2;
+    @apply sm:col-span-2 col-span-4 sm:row-start-1;
   }
 
   &--detail {
-    @apply justify-self-end;
+    @apply sm:justify-self-end sm:col-span-1 col-span-4 row-start-2 sm:row-start-1;
+    &.is-h4 {
+    }
   }
 
   &--toggle {
