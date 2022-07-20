@@ -60,8 +60,13 @@ import accordion from './objects/accordion'
 import events from './objects/events'
 import event from './objects/event'
 import productCard from './objects/product-card'
+import forms from './objects/forms'
+
+import eventForm from './objects/event-form'
+import signupForm from './objects/signup-form'
 
 import participant from './objects/participant'
+
 
 
 /*  ------------------------------------------ */
@@ -134,6 +139,9 @@ export default createSchema({
     events,
     event,
     productCard,
+    forms,
+    eventForm,
+    signupForm,
 
     participant
   ])

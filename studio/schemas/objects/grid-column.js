@@ -28,6 +28,7 @@ export default {
         { type: 'freeform' },
         { type: 'accordions' },
         { type: 'events' },
+        { type: 'forms' },
         { type: 'productCard' }
       ]
     }

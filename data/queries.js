@@ -162,6 +162,22 @@ export const blocks = `
       }
     }
   },
+  _type == 'forms' => {
+    _type,
+    _key,
+    types[]{
+      "id": _key,
+      _type,
+
+   submit,
+   successMsg[]{
+    ${ptContent}
+  },
+  errorMsg[]{
+    ${ptContent}
+  }
+}
+  },
   _type == 'productCard' => {
     _type,
     _key,
