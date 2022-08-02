@@ -7,22 +7,23 @@ import Icon from '@components/icon';
 
 const Footer = ({ data = {} }) => {
   const { blocks } = data;
-  console.log(blocks);
 
   const enabledBlocks = (blocks) => {
     let counter = 0;
     blocks.map((block, key) => (block.enabled ? (counter += 1) : null));
     return counter;
   };
-  console.log(`this many blocks ${enabledBlocks(blocks)}`);
 
   return (
     <footer className="footer" role="contentinfo">
-      <div className="footer--grid">
+      <div className={`footer--grid blocks${enabledBlocks(blocks)}`}>
         {blocks.map((block, key) => (
           <>
             {block.enabled | (key === 3) ? (
-              <div key={key} className="footer--block">
+              <div
+                key={key}
+                className={`footer--block blocks${enabledBlocks(blocks)}`}
+              >
                 {block.title && <p className="is-h3">{block.title}</p>}
 
                 {block.menu?.items && (
