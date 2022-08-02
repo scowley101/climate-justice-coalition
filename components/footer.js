@@ -19,9 +19,9 @@ const Footer = ({ data = {} }) => {
       <div className={`footer--grid blocks${enabledBlocks(blocks)}`}>
         {blocks.map((block, key) => (
           <>
-            {block.enabled | (key === 3) ? (
+            {block.enabled || key === 3 ? (
               <div
-                key={key}
+                key={`block${key}`}
                 className={`footer--block blocks${enabledBlocks(blocks)}`}
               >
                 {block.title && <p className="is-h3">{block.title}</p>}
@@ -36,7 +36,7 @@ const Footer = ({ data = {} }) => {
                   <div className="menu-social">
                     {block.social.map((link, key) => (
                       <a
-                        key={key}
+                        key={`social${key}`}
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
