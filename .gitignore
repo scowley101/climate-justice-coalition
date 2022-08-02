@@ -75,3 +75,6 @@ yarn.lock
 
 # dev
 todo.md
+
+# Local Netlify folder
+.netlify
