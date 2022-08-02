@@ -29,6 +29,12 @@ export default {
   ],
   fields: [
     {
+      title: 'Enable block 1?',
+      name: 'enabled1',
+      type: 'boolean',
+      group: 'column1'
+    },
+    {
       title: 'Block Title',
       name: 'blockTitle1',
       type: 'string',
@@ -39,6 +45,12 @@ export default {
       name: 'newsletter',
       type: 'newsletter',
       group: 'column1'
+    },
+    {
+      title: 'Enable block 2?',
+      name: 'enabled2',
+      type: 'boolean',
+      group: 'column2'
     },
     {
       title: 'Block Title',
@@ -54,6 +66,12 @@ export default {
       group: 'column2'
     },
     {
+      title: 'Enable block 3?',
+      name: 'enabled3',
+      type: 'boolean',
+      group: 'column3'
+    },
+    {
       title: 'Block Title',
       name: 'blockTitle3',
       type: 'string',
@@ -66,6 +84,7 @@ export default {
       to: [{ type: 'menu' }],
       group: 'column3'
     },
+
     {
       title: 'Block Title',
       name: 'blockTitle4',

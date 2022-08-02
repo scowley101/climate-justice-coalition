@@ -5,7 +5,7 @@ import ProductCard from '@components/product-card';
 import Freeform from '@components/freeform';
 import AccordionList from '@components/accordion-list';
 import EventList from '@components/event-list';
-import ContactForm from '@components/modules/contact-form';
+import ContactForm from '@components/form-contact';
 import Forms from '@components/forms';
 
 const Grid = ({ data = {} }) => {
@@ -84,7 +84,7 @@ const GridBlock = ({ block }) => {
       return <AccordionList data={block} />;
     case 'events':
       return <EventList data={block} />;
-    case 'forms':
+    case 'form':
       return <Forms data={block} />;
 
     case 'productCard':

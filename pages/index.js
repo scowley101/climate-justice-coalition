@@ -5,7 +5,7 @@ import { getStaticPage, queries } from '@data';
 
 import Layout from '@components/layout';
 import { Module } from '@components/modules';
-import ContactForm from '@components/modules/contact-form';
+
 
 const Home = ({ data }) => {
   const { site, page } = data;
@@ -24,6 +24,7 @@ const Home = ({ data }) => {
       {page.modules?.map((module, key) => (
         <Module key={key} index={key} module={module} />
       ))}
+   
     </Layout>
   );
 };

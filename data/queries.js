@@ -162,13 +162,10 @@ export const blocks = `
       }
     }
   },
-  _type == 'forms' => {
+  _type == 'form' => {
     _type,
     _key,
-    types[]{
-      "id": _key,
-      _type,
-
+   formType,
    submit,
    successMsg[]{
     ${ptContent}
@@ -176,7 +173,6 @@ export const blocks = `
   errorMsg[]{
     ${ptContent}
   }
-}
   },
   _type == 'productCard' => {
     _type,
@@ -226,6 +222,28 @@ export const modules = `
     }
   },
   _type == 'contactForm' => {
+    _type,
+    _key,
+   submit,
+   successMsg[]{
+    ${ptContent}
+  },
+  errorMsg[]{
+    ${ptContent}
+  },
+  },
+  _type == 'eventForm' => {
+    _type,
+    _key,
+   submit,
+   successMsg[]{
+    ${ptContent}
+  },
+  errorMsg[]{
+    ${ptContent}
+  },
+  },
+  _type == 'signUpForm' => {
     _type,
     _key,
    submit,
@@ -371,6 +389,7 @@ export const site = `
     "footer": *[_type == "footerSettings"][0]{
       "blocks": [
         {
+          "enabled": enabled1,
           "title": blockTitle1,
           newsletter{
             "id": "footer",
@@ -388,6 +407,7 @@ export const site = `
           }
         },
         {
+          "enabled": enabled2,
           "title": blockTitle2,
           "menu": blockMenu2->{
             items[]{
@@ -396,6 +416,7 @@ export const site = `
           }
         },
         {
+          "enabled": enabled3,
           "title": blockTitle3,
           "menu": blockMenu3->{
             items[]{

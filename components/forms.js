@@ -1,20 +1,22 @@
 import React from 'react';
-import ContactForm from './modules/contact-form';
+import ContactForm from './form-contact';
+import EventForm from './form-event';
+import SignUpForm from './form-signup';
 
 function Forms({ data }) {
-  const type = data?.types[0]._type;
-  console.log(type);
+  const type = data.formType;
 
   switch (type) {
     case 'contactForm':
       return <ContactForm data={data} />;
     case 'eventForm':
-      return <h2>event form</h2>;
+      return <EventForm data={data} />;
     case 'signUpForm':
-      return <h2>sign up form</h2>;
+      return <SignUpForm data={data} />;
     default:
       return null;
   }
 }
 
 export default Forms;
+ 

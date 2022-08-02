@@ -1,5 +1,5 @@
 .form {
-  @apply relative;
+  @apply relative mt-52;
 
   &--error {
     /* Error Message styles */
@@ -27,6 +27,11 @@
 
       .control {
         @apply sm:flex-1 m-0 border rounded-full bg-pageBG;
+
+        &.is-event {
+          @apply rounded-3xl;
+          height: 20rem;
+        }
       }
 
       .btn {

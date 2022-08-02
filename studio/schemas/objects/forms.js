@@ -1,32 +1,50 @@
 import { Question } from 'phosphor-react'
 
 export default {
-  title: 'Form list',
-  name: 'forms',
+  title: 'Form',
+  name: 'form',
   type: 'object',
   icon: Question,
   fields: [
-    {
-      title: 'Forms',
-      name: 'types',
-      type: 'array',
-      of: [
-        { type: 'contactForm' },
-        { type: 'eventForm' },
-        { type: 'signUpForm' },
-      ]
-    }
+    
+{
+  title: 'Form Type',
+  name: 'formType',
+  type: 'string',
+  options: {
+    list: [
+      { title: 'Contact', value: 'contactForm' },
+      { title: 'Event submit', value: 'eventForm' },
+      { title: 'Sign Up', value: 'signUpForm' }
+    ]
+  },
+  initialValue: 'contactForm',
+  validation: Rule => Rule.required()
+},
+{
+  title: 'Submit Text',
+  name: 'submit',
+  type: 'string'
+},
+{
+  title: 'Success Message',
+  name: 'successMsg',
+  type: 'complexPortableText'
+},
+{
+  title: 'Error Message',
+  name: 'errorMsg',
+  type: 'complexPortableText'
+},
   ],
   preview: {
-    select: {
-      types: 'types'
-    },
-    prepare({ types }) {
+    prepare() {
       return {
-        title: 'Forms',
-        subtitle: `${types.length} type(s)`
+        title: 'Form'
       }
     }
   }
 }
+
+
 

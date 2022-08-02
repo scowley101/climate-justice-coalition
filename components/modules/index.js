@@ -7,7 +7,9 @@ const Marquee = dynamic(() => import('./marquee'));
 const DividerPhoto = dynamic(() => import('./divider-photo'));
 const ProductHero = dynamic(() => import('./product-hero'));
 const Collection = dynamic(() => import('./collection-grid'));
-const ContactForm = dynamic(() => import('./contact-form'));
+const ContactForm = dynamic(() => import('../form-contact'));
+const EventForm = dynamic(() => import('../form-event'));
+const SignUpForm = dynamic(() => import('../form-signup'));
 
 export const Module = ({
   index,
@@ -46,6 +48,10 @@ export const Module = ({
       );
     case 'contactForm':
       return <ContactForm index={index} data={module} />;
+    case 'eventForm':
+      return <EventForm index={index} data={module} />;
+    case 'signUpForm':
+      return <SignUpForm index={index} data={module} />;
     default:
       return null;
   }
