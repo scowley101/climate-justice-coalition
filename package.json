@@ -77,7 +77,8 @@
   "eslintConfig": {
     "extends": [
       "wesbos"
-    ]
+    ],
+    "extends": ["eslint:recommended", "next"]
   },
   "peerDependencies": {
     "postcss": "^8.4.5"
