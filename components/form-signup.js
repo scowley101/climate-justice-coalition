@@ -16,12 +16,13 @@ const SignUpForm = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const encode = (data) =>
-    Object.keys(data)
+  const encode = (data) => {
+    return Object.keys(data)
       .map(
         (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
       )
       .join('&');
+  }
 
   const formik = useFormik({
     initialValues: {
@@ -39,7 +40,7 @@ const SignUpForm = () => {
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': 'contact', ...values }),
+        body: encode({ 'form-name': 'sign-up', ...values }),
       })
         .then(() => {
           setMessage('Form submitted');
@@ -77,6 +78,8 @@ const SignUpForm = () => {
           className="form"
           onSubmit={formik.handleSubmit}
         >
+                    <input type="hidden" name="form-name" value="sign-up" />
+
           <div className="form--fields">
             <div className="control--group is-inline">
               <div
