@@ -16,12 +16,13 @@ const EventForm = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const encode = (data) =>
+  const encode = (data) => {
     Object.keys(data)
       .map(
         (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
       )
       .join('&');
+  }
 
   const formik = useFormik({
     initialValues: {
