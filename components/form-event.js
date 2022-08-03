@@ -78,6 +78,7 @@ const EventForm = () => {
           className="form"
           onSubmit={formik.handleSubmit}
         >
+          <input type="hidden" name="form-name" value="event" />
           <div className="form--fields">
             <div className="control--group is-inline">
               <div
