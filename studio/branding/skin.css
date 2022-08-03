@@ -2,41 +2,41 @@
 
 :root {
   /* sanity variables */
-  --brand-primary: #000000;
-  --brand-primary--inverted: #ffffff;
-  --brand-secondary: #000000;
-  --brand-secondary--inverted: #ffffff;
+  --brand-primary: #161616;
+  --brand-primary--inverted: #f7f7f7;
+  --brand-secondary: #161616;
+  --brand-secondary--inverted: #f7f7f7;
 
   --main-navigation-color: var(--brand-primary);
   --main-navigation-color--inverted: var(--brand-primary--inverted);
 
   /* custom variables */
-  --pt-bg: #ffffff;
-  --pt-text: #000000;
+  --pt-bg: #161616;
+  --pt-text: #f7f7f7;
 
-  --button-bg: #000000;
-  --button-text: #ffffff;
+  --button-bg: #f7f7f7;
+  --button-text: #161616;
 
   --button-bg-active: rgba(0, 0, 0, 0.15);
-  --button-text-active: #000000;
+  --button-text-active: #161616;
 }
 
 /* theme UI overrides */
 
-[data-scheme='dark'] [data-ui='CollapseMenu'] [data-selected] > span {
+[data-scheme='light'] [data-ui='CollapseMenu'] [data-selected] > span {
   background: var(--brand-primary--inverted) !important;
 }
-[data-scheme='dark'] [data-ui='CollapseMenu'] [data-selected] [data-ui='Text'] {
+[data-scheme='light'] [data-ui='CollapseMenu'] [data-selected] [data-ui='Text'] {
   color: var(--brand-primary) !important;
 }
 
-[data-scheme='dark']
+[data-scheme='light']
   [data-ui='CollapseMenu']
   [data-ui='CollapseMenuButton']:active {
   background: hsla(0, 0%, 100%, 25%) !important;
 }
 
-[data-scheme='dark']
+[data-scheme='light']
   [data-ui='CollapseMenu']
   [data-ui='CollapseMenuButton']:active
   [data-ui='Text'] {

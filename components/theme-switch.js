@@ -6,8 +6,8 @@ import { useHasMounted } from '@lib/helpers';
 import Swatch from '@components/swatch';
 
 const themes = [
-  { title: 'Dark Mode', name: 'dark', color: { hex: '#161616' } },
   { title: 'Light Mode', name: 'light', color: { hex: '#f7f7f7' } },
+  { title: 'Dark Mode', name: 'dark', color: { hex: '#161616' } },
 ];
 
 const ThemeSwitch = () => {
@@ -25,6 +25,7 @@ const ThemeSwitch = () => {
 
   const nextTheme = themes[(currentIndex + 1) % themes.length];
   const currentTheme = themes[currentIndex];
+  console.log(theme);
 
   return (
     <div className="theme-switch">

@@ -2,8 +2,16 @@
 
 .hero {
   &--content {
+    h2 {
+      @apply text-white;
+    }
+
     p {
       @apply text-pageText text-24 font-bold;
+    }
+
+    .is-h4 {
+      @apply text-white;
     }
   }
 }
