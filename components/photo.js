@@ -17,7 +17,6 @@ const Photo = ({
   onLoad,
   className,
 }) => {
-  if (!photo?.asset) return null
 
   const [isLoaded, setIsLoaded] = useState(false)
   const { observe, inView } = useInView({
@@ -59,6 +58,9 @@ const Photo = ({
     if (isLoaded) onLoad?.()
   }, [isLoaded])
 
+  if (!photo?.asset) return null
+
+
   return (
     <figure className={className ? className : null}>
       <div
@@ -90,7 +92,8 @@ const Photo = ({
       </div>
     </figure>
   )
-}
+        }
+
 
 const getSize = (layout) => {
   switch (layout) {

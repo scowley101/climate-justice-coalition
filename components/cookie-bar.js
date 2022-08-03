@@ -25,13 +25,13 @@ const barAnim = {
   },
 }
 
-const CookieBar = React.memo(({ data = {} }) => {
+const CookieBar = React.memo(function CookieBar({ data = {} }) {
   const { enabled, message, link } = data
+  const hasMounted = useHasMounted()
+  const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
 
   if (!enabled) return null
 
-  const hasMounted = useHasMounted()
-  const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
 
   if (!hasMounted || !message) return null
 

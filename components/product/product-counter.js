@@ -7,8 +7,8 @@ import { counterAnim } from '@lib/animate'
 
 import Icon from '@components/icon'
 
-const ProductCounter = React.memo(
-  ({ id, defaultCount = 1, onUpdate, max, className }) => {
+const ProductCounter = React.memo(function ProductCounter
+  ({ id, defaultCount = 1, onUpdate, max, className }) {
     const [lineQuantity, setLineQuantity] = useState(defaultCount)
 
     const [direction, setDirection] = useState(1)

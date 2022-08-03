@@ -17,13 +17,21 @@ const MegaNavigation = ({ items = [], headerHeight }) => {
     return 'dropdownItems' in item
   })
 
-  if (!dropdowns.length) return null
-
   const toggleMegaNav = useToggleMegaNav()
   const { meganav } = useSiteContext()
   const activeNav = useRef()
   const activeNavRect = useRect(activeNav, { observe: true })
   const [hasFocus, setHasFocus] = useState(false)
+
+  useEffect(() => {
+    if (isBrowser) {
+      document.body.classList.toggle('overflow-hidden', meganav.isOpen)
+    }
+  }, [meganav.isOpen])
+
+  if (!dropdowns.length) return null
+
+
 
   const handleKeyDown = (e) => {
     if (e.which === 27) {
@@ -31,11 +39,7 @@ const MegaNavigation = ({ items = [], headerHeight }) => {
     }
   }
 
-  useEffect(() => {
-    if (isBrowser) {
-      document.body.classList.toggle('overflow-hidden', meganav.isOpen)
-    }
-  }, [meganav.isOpen])
+
 
   return (
     <>

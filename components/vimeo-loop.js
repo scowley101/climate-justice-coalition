@@ -12,7 +12,6 @@ const VideoLoop = ({
   className,
   ...rest
 }) => {
-  if (!id) return null
 
   const videoRef = useRef()
   const [iframePlayer, setIframePlayer] = useState(null)
@@ -33,6 +32,9 @@ const VideoLoop = ({
       }
     }
   }, [iframePlayer, inView])
+
+  if (!id) return null
+
 
   return (
     <div className={cx('video-loop', className)} {...rest}>

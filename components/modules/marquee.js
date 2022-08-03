@@ -8,12 +8,14 @@ import ProductCard from '@components/product-card';
 const Marquee = ({ data = {} }) => {
   const { items, speed, reverse, pausable } = data;
 
-  if (!items?.length) return null;
 
   const { observe, inView } = useInView({
     unobserveOnEnter: true,
     threshold: 0.1,
   });
+
+  if (!items?.length) return null;
+
 
   return (
     <div ref={observe} className="marquee-section">

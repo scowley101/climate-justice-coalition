@@ -30,7 +30,7 @@ const itemAnim = {
   },
 }
 
-const ProductCard = React.forwardRef(
+const ProductCard = React.forwardRef(function ProductCard
   (
     {
       product,
@@ -45,8 +45,7 @@ const ProductCard = React.forwardRef(
       onClick,
     },
     ref
-  ) => {
-    if (!product) return null
+  ) {
 
     const activeFilterValues =
       activeFilters?.flatMap((f) =>
@@ -97,6 +96,9 @@ const ProductCard = React.forwardRef(
       const newActiveVariant = product.variants.find((v) => v.id === id)
       setActiveVariant(newActiveVariant)
     }
+
+    if (!product) return null
+
 
     return (
       <m.div

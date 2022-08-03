@@ -151,7 +151,7 @@ const Waitlist = ({ variant, klaviyo }) => {
             className="form--success"
           >
             <div className="form--success-content">
-              Thanks! We'll be in touch.
+              Thanks! We&apos;ll be in touch.
             </div>
           </m.div>
         )}

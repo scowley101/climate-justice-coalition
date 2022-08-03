@@ -22,7 +22,6 @@ const Collection = ({ data = {} }) => {
   const { title, products, filter, sort, paginationLimit, noFilterResults } =
     data
 
-  if (!products || products.length === 0) return null
 
   const { isPageTransition } = useSiteContext()
 
@@ -153,6 +152,9 @@ const Collection = ({ data = {} }) => {
     collectionItems,
   ])
 
+  if (!products || products.length === 0) return null
+
+
   return (
     <section className="collection">
       <div className="collection--tools">
@@ -241,7 +243,7 @@ const Collection = ({ data = {} }) => {
               Load More
               <span className="sr-only">
                 {' '}
-                products from the "{title}" collection
+                products from the &quot;{title}&quot; collection
               </span>
             </button>
           </div>

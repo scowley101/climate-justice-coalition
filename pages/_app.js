@@ -99,7 +99,7 @@ const Site = ({ Component, pageProps, router }) => {
         <Component key={pageID} {...pageProps} />
       </AnimatePresence>
 
-      <Cart data={{ ...data?.site }} />
+      {/* <Cart data={{ ...data?.site }} /> */}
     </LazyMotion>
   )
 }
