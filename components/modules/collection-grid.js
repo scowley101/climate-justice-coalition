@@ -15,7 +15,7 @@ import { useSiteContext } from '@lib/context'
 import CollectionFilter from '@components/collection-filter'
 import CollectionFilterChips from '@components/collection-filter-chips'
 import CollectionSort from '@components/collection-sort'
-import ProductCard from '@components/product-card'
+// import ProductCard from '@components/product-card'
 import BlockContent from '@components/block-content'
 
 const Collection = ({ data = {} }) => {
@@ -193,7 +193,7 @@ const Collection = ({ data = {} }) => {
             'is-empty': !orderedProducts.length,
           })}
         >
-          {paginatedProducts.map((product, key) => (
+          {/* {paginatedProducts.map((product, key) => (
             <ProductCard
               ref={(node) => (collectionItems.current[key] = node)}
               key={
@@ -215,7 +215,7 @@ const Collection = ({ data = {} }) => {
               showPrice
               showQuickAdd
             />
-          ))}
+          ))} */}
 
           {orderedProducts.length === 0 && (
             <div className="collection--empty">

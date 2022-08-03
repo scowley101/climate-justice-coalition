@@ -15,7 +15,7 @@ import {
   useTogglePageTransition,
 } from '@lib/context'
 
-import Cart from '@components/cart'
+// import Cart from '@components/cart'
 
 // // Console Credits
 // if (isBrowser) {

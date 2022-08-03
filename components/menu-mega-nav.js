@@ -10,7 +10,7 @@ import { swipeAnim } from '@lib/animate'
 import { useSiteContext, useToggleMegaNav } from '@lib/context'
 
 import Menu from '@components/menu'
-import FeaturedProducts from '@components/menu-featured-products'
+// import FeaturedProducts from '@components/menu-featured-products'
 
 const MegaNavigation = ({ items = [], headerHeight }) => {
   const dropdowns = items.filter((item) => {
@@ -85,10 +85,10 @@ const MegaNavigation = ({ items = [], headerHeight }) => {
                           <div className="mega-item--featured-title">
                             <span>Featured</span>
                           </div>
-                          <FeaturedProducts
+                          {/* <FeaturedProducts
                             products={dropdown.featured}
                             onClick={() => toggleMegaNav(false)}
-                          />
+                          /> */}
                         </div>
                       )}
                     </m.div>

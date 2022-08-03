@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import ProductCard from '@components/product-card';
+// import ProductCard from '@components/product-card';
 import Freeform from '@components/freeform';
 import AccordionList from '@components/accordion-list';
 import EventList from '@components/event-list';
@@ -87,16 +87,16 @@ const GridBlock = ({ block }) => {
     case 'form':
       return <Forms data={block} />;
 
-    case 'productCard':
-      return (
-        <ProductCard
-          className="is-inline"
-          product={block.product}
-          hasVisuals
-          showThumbs
-          showPrice
-        />
-      );
+    // case 'productCard':
+    //   return (
+    //     <ProductCard
+    //       className="is-inline"
+    //       product={block.product}
+    //       hasVisuals
+    //       showThumbs
+    //       showPrice
+    //     />
+    //   );
     default:
       return null;
   }
