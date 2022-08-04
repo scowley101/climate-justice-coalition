@@ -59,10 +59,10 @@ const Event = ({
               onClick={() => onToggle(id, !isOpen)}
               aria-expanded={isOpen}
               aria-controls={`accordion-${id}`}
-              className={cx('accordion--toggle', { 'is-open': isOpen })}
+              className={cx('event--toggle', { 'is-open': isOpen })}
             >
               <p className="event--toggle">Event details</p>
-              <div className="accordion--icon event--toggle">
+              <div className=" event--icon">
                 <Icon name="Chevron Down" />
               </div>
             </button>
