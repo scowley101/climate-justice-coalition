@@ -46,7 +46,7 @@ const Grid = ({ data = {} }) => {
         >
           {columns.map((col, key) => {
             const { sizes, blocks } = col;
-
+console.log(col)
             return (
               <div
                 key={key}
@@ -62,9 +62,9 @@ const Grid = ({ data = {} }) => {
                   )
                 )}
               >
-                {blocks.map((block, key) => (
+                {blocks ? blocks.map((block, key) => (
                   <GridBlock key={key} block={block} />
-                ))}
+                )) : ''}
               </div>
             );
           })}
