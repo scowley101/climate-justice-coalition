@@ -17,8 +17,9 @@ const Footer = ({ data = {} }) => {
   return (
     <footer className="footer" role="contentinfo">
       <div className={`footer--grid blocks${enabledBlocks(blocks)}`}>
+        {console.log(enabledBlocks(blocks))}
         {blocks.map((block, key) => (
-          <>
+          <React.Fragment key={`block-fragment${key}`}>
             {block.enabled || key === 3 ? (
               <div
                 key={`block${key}`}
@@ -33,10 +34,10 @@ const Footer = ({ data = {} }) => {
                 {block.newsletter && <Newsletter data={block.newsletter} />}
 
                 {block.social && (
-                  <div className="menu-social">
+                  <div className="menu-social" key={`social-div${key}`}>
                     {block.social.map((link, key) => (
                       <a
-                        key={`social${key}`}
+                        key={`social-link${key}`}
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -61,7 +62,7 @@ const Footer = ({ data = {} }) => {
                 )}
               </div>
             ) : null}
-          </>
+          </React.Fragment>
         ))}
       </div>
     </footer>
