@@ -46,7 +46,6 @@ const Grid = ({ data = {} }) => {
         >
           {columns.map((col, key) => {
             const { sizes, blocks } = col;
-console.log(col)
             return (
               <div
                 key={key}
