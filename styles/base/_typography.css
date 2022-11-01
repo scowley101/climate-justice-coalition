@@ -18,7 +18,7 @@
   }
 
   p {
-    @apply m-0 text-20 text-pageParagraph leading-150;
+    @apply m-0 text-16 text-pageParagraph leading-150;
   }
 
   strong {
